@@ -1,0 +1,48 @@
+2021-11-16 04:01:27,2021-11-16 14:01:27,Deposit,EUR,1.,1.,0.,0.,1.,1.,
+2021-11-23 04:02:43,2021-11-23 14:02:43,Deposit,EUR,10.,10.,0.,0.,10.,10.,
+2021-11-23 17:06:52,2021-11-24 03:06:52,Sell,EUR,5.,5.,0.,0.,5.,5.,Exchanged to 0.00009866 BTC. The fees for the exchange was taken in the bought currency
+2021-11-23 17:06:52,2021-11-24 03:06:52,Buy,BTC,0.00009966,5.,0.,0.05,0.00009866,4.95,Exchanged from 5 EUR
+2021-11-23 22:50:42,2021-11-24 08:50:42,Sell,EUR,5.,5.,0.,0.,5.,5.,Exchanged to 7.607 ETH. The fees for the exchange was taken in the bought currency
+2021-11-23 22:50:42,2021-11-24 08:50:42,Buy,ETH,7.684,5.,0.08,0.05,7.607,4.95,Exchanged from 5 EUR
+2021-11-23 22:54:20,2021-11-24 08:54:20,Sell,EUR,5.,5.,0.,0.,5.,5.,Exchanged to 7.641 ETH. The fees for the exchange was taken in the bought currency
+2021-11-23 22:54:20,2021-11-24 08:54:20,Buy,ETH,7.719,5.,0.08,0.05,7.642,4.95,Exchanged from 5 EUR
+2021-11-24 23:32:34,2021-11-25 09:32:34,Sell,EUR,46.,46.,0.,0.,46.,46.,Exchanged to 0.00088776 BTC. The fees for the exchange was taken in the bought currency
+2021-11-24 23:32:34,2021-11-25 09:32:34,Buy,BTC,0.00089673,46.,0.,0.46,0.00088776,45.54,Exchanged from 46 EUR
+2021-11-24 23:36:13,2021-11-25 09:36:13,Deposit,EUR,10.,10.,0.,0.,10.,10.,
+2021-11-24 23:37:03,2021-11-25 09:37:03,Sell,EUR,10.,10.,0.,0.,10.,10.,Exchanged to 0.00019278 BTC. The fees for the exchange was taken in the bought currency
+2021-11-24 23:37:03,2021-11-25 09:37:03,Buy,BTC,0.00019473,10.,0.,0.1,0.00019278,9.9,Exchanged from 10 EUR
+2021-12-07 22:00:00,2021-12-08 08:00:00,Payouts,ETH,0.006,0.,0.,0.,0.006,0.,Yield payouts
+2022-01-13 10:42:44,2022-01-13 20:42:44,Buy,ETH,982.493,47.,9.82,5.,972.668,495.,Exchanged from 47 EUR
+2022-01-13 10:44:53,2022-01-13 20:44:53,Sell,EUR,47.,47.,0.,0.,47.,47.,Exchanged to 970.29 ETH. The fees for the exchange was taken in the bought currency
+2022-01-13 22:00:00,2022-01-14 08:00:00,Payouts,ETH,0.005,0.,0.,0.,0.005,0.,Yield payouts
+2022-01-13 22:00:00,2022-01-14 08:00:00,Payouts,BTC,0.00000003,0.,0.00000001,0.,0.00000002,0.,Yield payouts
+2022-01-14 11:37:36,2022-01-14 21:37:36,Sell,BTC,0.00115517,43.8,0.,0.,0.00115517,43.8,Exchanged to 86.879 ETH. The fees for the exchange was taken in the bought currency
+2022-01-14 11:37:36,2022-01-14 21:37:36,Buy,ETH,87.757,43.8,0.87757,0.44,86.879,43.36,Exchanged from 0.00115517 BTC
+2022-03-07 22:00:00,2022-03-08 08:00:00,Payouts,ETH,0.572,0.24,0.,0.,0.572,0.24,Yield payouts
+2022-03-08 22:00:00,2022-03-09 08:00:00,Payouts,ETH,0.572,0.25,0.,0.,0.572,0.25,Yield payouts
+2022-03-09 22:00:00,2022-03-10 08:00:00,Payouts,ETH,0.59,0.24,0.,0.,0.59,0.24,Yield payouts
+2022-03-10 15:59:12,2022-03-11 01:59:12,Deposit,EUR,30.,30.,0.,0.,30.,30.,
+2022-03-10 16:03:26,2022-03-11 02:03:26,Sell,EUR,30.,30.,0.,0.,30.,30.,Exchanged to 75.58 ETH. The fees for the exchange was taken in the bought currency
+2022-03-10 16:03:26,2022-03-11 02:03:26,Buy,ETH,76.344,30.,0.76,0.3,75.581,29.7,Exchanged from 30 EUR
+2022-03-10 22:00:00,2022-03-11 08:00:00,Payouts,ETH,0.59,0.24,0.,0.,0.59,0.24,Yield payouts
+2022-05-12 22:00:00,2022-05-13 08:00:00,Payouts,ETH,0.61,0.18,0.,0.,0.61,0.18,Yield payouts
+2022-05-12 22:37:03,2022-05-13 08:37:03,Deposit,EUR,23.,23.,0.,0.,23.,23.,
+2022-05-12 22:40:30,2022-05-13 08:40:30,Sell,EUR,20.,20.,0.,0.,20.,20.,Exchanged to 65.125 ETH. The fees for the exchange was taken in the bought currency
+2022-05-12 22:40:30,2022-05-13 08:40:30,Buy,ETH,65.783,20.,0.66,0.2,65.125,19.8,Exchanged from 20 EUR
+2022-05-21 22:00:00,2022-05-22 08:00:00,Payouts,ETH,0.684,0.2,0.,0.,0.684,0.2,Yield payouts
+2022-05-22 22:00:00,2022-05-23 08:00:00,Payouts,ETH,0.684,0.21,0.,0.,0.684,0.21,Yield payouts
+2022-05-23 10:40:32,2022-05-23 20:40:32,Sell,EUR,20.,20.,0.,0.,20.,20.,Exchanged to 67.885 ETH. The fees for the exchange was taken in the bought currency
+2022-05-23 10:40:32,2022-05-23 20:40:32,Buy,ETH,68.571,20.,0.69,0.2,67.885,19.8,Exchanged from 20 EUR
+2022-05-26 22:00:00,2022-05-27 08:00:00,Payouts,ETH,0.525,0.14,0.,0.,0.525,0.14,Yield payouts
+2022-05-27 10:04:27,2022-05-27 20:04:27,Sell,EUR,40.,40.,0.,0.,40.,40.,Exchanged to 152.019 ETH. The fees for the exchange was taken in the bought currency
+2022-05-27 10:04:27,2022-05-27 20:04:27,Buy,ETH,153.555,40.,1.54,0.4,152.019,39.6,Exchanged from 40 EUR
+2022-06-01 22:00:00,2022-06-02 08:00:00,Payouts,ETH,0.513,0.13,0.,0.,0.513,0.13,Yield payouts
+2022-06-02 08:44:55,2022-06-02 18:44:55,Sell,EUR,20.,20.,0.,0.,20.,20.,Exchanged to 75.961 ETH. The fees for the exchange was taken in the bought currency
+2022-06-02 08:44:55,2022-06-02 18:44:55,Buy,ETH,76.729,20.,0.77,0.2,75.962,19.8,Exchanged from 20 EUR
+2022-06-02 22:00:00,2022-06-03 08:00:00,Payouts,ETH,0.513,0.13,0.,0.,0.513,0.13,Yield payouts
+2022-06-18 22:00:00,2022-06-19 08:00:00,Payouts,ETH,0.57,0.08,0.,0.,0.57,0.08,Yield payouts
+2022-06-19 13:06:31,2022-06-19 23:06:31,Deposit,EUR,23.,23.,0.,0.,23.,23.,
+2022-06-19 16:18:53,2022-06-20 02:18:53,Sell,EUR,23.,23.,0.,0.,23.,23.,Exchanged to 656.169 ETH. The fees for the exchange was taken in the bought currency
+2022-06-19 16:18:53,2022-06-20 02:18:53,Buy,ETH,662.797,23.,6.63,1.,656.169,99.,Exchanged from 23 EUR
+2022-06-19 22:00:00,2022-06-20 08:00:00,Payouts,ETH,0.57,0.09,0.,0.,0.57,0.09,Yield payouts
+2022-06-30 22:00:00,2022-07-01 08:00:00,Payouts,ETH,0.433,0.08,0.,0.,0.433,0.08,Yield payouts
