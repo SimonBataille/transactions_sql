@@ -40,6 +40,32 @@
     sqlite> SELECT SUM("Gross amount") FROM account_statement_no_header WHERE Type='Deposit' AND Currency='EUR';
     sqlite> DROP TABLE IF EXISTS account_statement_no_header;
 
+
+6-Deposit
+    Combien j'ai déposé en tout sur Swissborg en euro ? (Dépôts totaux convertis en euro)
+        SELECT SUM("Gross amount (EUR)") FROM account_statement_no_header WHERE Type='Deposit';
+
+    Combien d'euros j'ai déposé sur Swissborg ? (Dépôt total euro)
+        SELECT SUM("Gross amount") FROM account_statement_no_header WHERE Type='Deposit' AND Currency='EUR';
+
+    Combien de BTC j'ai déposé sur Swissborg ?
+        SELECT SUM("Gross amount") FROM account_statement_no_header WHERE Type='Deposit' AND Currency='BTC';
+
+    Combien de BTC j'ai déposé sur Swissborg en euro ?
+        SELECT SUM("Gross amount (EUR)") FROM account_statement_no_header WHERE Type='Deposit' AND Currency='BTC';
+
+7-Sell
+    Combien d'euros j'ai dépensé en tout sur Swissborg ? (Doit être égal à dépôt total en euros) 
+        SELECT SUM("Gross amount (EUR)") FROM account_statement_no_header WHERE Type='Sell' AND Currency='EUR';
+        
+8-Buy
+    Combien d'euros j'ai investi en ETH ?
+        SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Buy' AND Currency='ETH';
+
+9-Payouts
+    Combien d'intérêts j'ai gagné sur le ETH ?
+        SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Payouts' AND Currency='ETH';
+
 # LINKS
 https://www.smartdraw.com/entity-relationship-diagram/
 
