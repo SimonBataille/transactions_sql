@@ -1,5 +1,13 @@
 # transactions_sql
 
+# MISCELLANEOUS SQLITE
+ALTER TABLE account_statement_no_header RENAME TO swb;
+DROP TABLE IF EXISTS "swb";
+sqlite> .read droptables.sql
+UPDATE employees SET lastname = 'Smith' WHERE employeeid = 3;
+UPDATE swb SET mtpID = 12 WHERE swbID = 205;
+UPDATE swb SET mtpID = 10 WHERE swbID = 219;
+
 # HEADER 
 
 1 Create database
@@ -8,6 +16,7 @@
 2 Import csv
     .mode csv
     .import account_statement.csv account_statement
+    .import mtpl.csv mtpl
 
 3 Make SQL requests
     .schema account_statement
@@ -18,21 +27,42 @@
 # NO HEADER
 
 1-Files
-    acccount_statement_no_header.csv
+    swb.csv
+    mtp.csv
     myscript.sql
 
 2-Create database and tables
     sqlite3 transactions.db < myscript.sql
     sqlite3 transactions.db
+    or
+    sqlite3 
+    sqlite3> .read myscript.sql
 
 3-Check
     sqlite3 transactions.db
     sqlite> .tables
-    sqlite> .schema account_statement_no_header
+    sqlite> .schema swb
+    sqlite> .schema mtp
 
-4-Import data
+4-Import data and add primary key
     sqlite> .mode csv
-    sqlite> .import account_statement_no_header.csv account_statement_no_header
+
+    sqlite> .import swb.csv tmp_swb
+    sqlite> INSERT INTO swb SELECT NULL,*, FROM tmp_swb;
+
+    sqlite> .import mtp.csv tmp_mtp
+    sqlite> INSERT INTO mtp SELECT NULL,* FROM tmp_mtp;
+
+
+
+# MTP
+    vim commands to refactor : 
+        :%s/EUR/EUR,/g
+        :%s/BTC/BTC,/g
+        :%s/USDC/USDC,/g
+        :%s/XDAI/XDAI,/g
+
+# SWB
 
 5-SQL requests
     sqlite> SELECT * FROM account_statement_no_header WHERE Type='Buy';
