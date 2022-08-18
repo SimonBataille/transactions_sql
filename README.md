@@ -89,6 +89,11 @@ sqlite> SELECT * FROM mtp JOIN nex ON mtp.mtpID=nex.mtpID;
 
     sqlite> SELECT * FROM mtp WHERE "Currency Out"='USDC';
 
+    ALTER TABLE mtp ADD appID INTEGER REFERENCES app(appID); //fk on app id
+
+    UPDATE mtp SET appID=5 WHERE mtpID=6 AND mtpID=7 AND mtpID=8 AND mtpID=9 AND mtpID=10;
+
+    SELECT * FROM mtp JOIN app ON mtp.appID=app.appID;
 
 # NEX
     tac nex.csv_brut > tmp_nex.csv
@@ -135,6 +140,17 @@ sqlite> SELECT * FROM mtp JOIN nex ON mtp.mtpID=nex.mtpID;
     Combien d'intérêts j'ai gagné sur le CHSB ?
         SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Payouts' AND Currency='CHSB';
 
+
+# APP
+sqlite> CREATE TABLE app(
+   ...> appID INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...> "Name" TEXT);
+
+INSERT INTO app("Name") VALUES('swb');
+INSERT INTO app("Name") VALUES('nex');
+INSERT INTO app("Name") VALUES('btc');
+INSERT INTO app("Name") VALUES('met');
+INSERT INTO app("Name") VALUES('bri');
 
 # LINKS
 https://www.smartdraw.com/entity-relationship-diagram/
