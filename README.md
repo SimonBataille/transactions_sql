@@ -1,12 +1,24 @@
 # transactions_sql
 
+
 # MISCELLANEOUS SQLITE
 ALTER TABLE account_statement_no_header RENAME TO swb;
 DROP TABLE IF EXISTS "swb";
-sqlite> .read droptables.sql
+sqlite> .read drop_tables.sql
 UPDATE employees SET lastname = 'Smith' WHERE employeeid = 3;
-UPDATE swb SET mtpID = 12 WHERE swbID = 205;
-UPDATE swb SET mtpID = 10 WHERE swbID = 219;
+UPDATE swb SET mtpID = 3 WHERE swbID = 205;
+UPDATE swb SET mtpID = 5 WHERE swbID = 219;
+UPDATE nex SET mtpID = 11 WHERE nexID = 45;
+UPDATE nex SET mtpID = 13 WHERE nexID = 52;
+
+sqlite> SELECT * FROM mtp JOIN nex ON mtp.mtpID=nex.mtpID;
+
+
+.output transactions_structure.sql
+.schema
+
+
+
 
 # HEADER 
 
@@ -16,6 +28,7 @@ UPDATE swb SET mtpID = 10 WHERE swbID = 219;
 2 Import csv
     .mode csv
     .import account_statement.csv account_statement
+    .import nex.csv nex
     .import mtpl.csv mtpl
 
 3 Make SQL requests
@@ -27,42 +40,68 @@ UPDATE swb SET mtpID = 10 WHERE swbID = 219;
 # NO HEADER
 
 1-Files
-    swb.csv
-    mtp.csv
-    myscript.sql
+    mtp.csv_brut //brut no header
+    swb.csv_brut //brut no header
+    nex.csv_brut //brut no header
+    tmp_swb.csv
+    tmp_mtp.csv
+    tmp_nex.csv
+    create_tables.sql
+    drop_tables.sql
 
 2-Create database and tables
-    sqlite3 transactions.db < myscript.sql
+    sqlite3 transactions.db < create_tables.sql
     sqlite3 transactions.db
     or
-    sqlite3 
-    sqlite3> .read myscript.sql
+    sqlite3 transactions.db
+    sqlite3> .read create_tables.sql
 
 3-Check
     sqlite3 transactions.db
     sqlite> .tables
     sqlite> .schema swb
     sqlite> .schema mtp
+    sqlite> .schema nex
+    sqlite> .schema tmp_swb
+    sqlite> .schema tmp_mtp
+    sqlite> .schema tmp_nex
 
 4-Import data and add primary key
     sqlite> .mode csv
 
-    sqlite> .import swb.csv tmp_swb
-    sqlite> INSERT INTO swb SELECT NULL,*, FROM tmp_swb;
+    sqlite> .import tmp_swb.csv tmp_swb
+    sqlite> INSERT INTO swb SELECT NULL,*,NULL FROM tmp_swb;
 
-    sqlite> .import mtp.csv tmp_mtp
+    sqlite> .import tmp_mtp.csv tmp_mtp
     sqlite> INSERT INTO mtp SELECT NULL,* FROM tmp_mtp;
 
+    sqlite> .import tmp_nex.csv tmp_nex
+    sqlite> INSERT INTO nex SELECT NULL,*,NULL FROM tmp_nex;
 
 
 # MTP
-    vim commands to refactor : 
+    tac mtp.csv_brut > tmp_mtp.csv
+    vim commands to refactor tmp_mtp.csv: 
         :%s/EUR/EUR,/g
         :%s/BTC/BTC,/g
         :%s/USDC/USDC,/g
         :%s/XDAI/XDAI,/g
 
+    sqlite> SELECT * FROM mtp WHERE "Currency Out"='USDC';
+
+
+# NEX
+    tac nex.csv_brut > tmp_nex.csv
+    vim commands to refactor tmp_nex.csv: 
+        :%s/\$//g
+
+    sqlite> SELECT Type,"Input Currency","Input Amount","Output Currency","Output Amount","USD Equivalent","Date / Time" FROM nex WHERE NOT Type='Interest'AND NOT Type='LockingTermDeposit';
+
+    SELECT nexID,Type,"Input Currency","Input Amount","Output Currency","Output Amount","USD Equivalent","Date / Time" FROM nex WHERE Type='Deposit';
+
+
 # SWB
+    cp swb.csv_brut tmp_swb.csv
 
 5-SQL requests
     sqlite> SELECT * FROM account_statement_no_header WHERE Type='Buy';
@@ -89,12 +128,13 @@ UPDATE swb SET mtpID = 10 WHERE swbID = 219;
         SELECT SUM("Gross amount (EUR)") FROM account_statement_no_header WHERE Type='Sell' AND Currency='EUR';
         
 8-Buy
-    Combien d'euros j'ai investi en ETH ?
-        SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Buy' AND Currency='ETH';
+    Combien d'euros j'ai investi en CHSB ?
+        SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Buy' AND Currency='CHSB';
 
 9-Payouts
-    Combien d'intérêts j'ai gagné sur le ETH ?
-        SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Payouts' AND Currency='ETH';
+    Combien d'intérêts j'ai gagné sur le CHSB ?
+        SELECT SUM("NET amount (EUR)") FROM account_statement_no_header WHERE Type='Payouts' AND Currency='CHSB';
+
 
 # LINKS
 https://www.smartdraw.com/entity-relationship-diagram/
